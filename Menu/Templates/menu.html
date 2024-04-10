@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>database</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css">
+    <!--css propio-->
+    <link rel="stylesheet" href="estilos/estilos_tabla.css">
+</head>
+<body>
+    <h1>datatables</h1>
+    <table id="1" class="table table-striped table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th class="centered">Id</th>
+                <th class="centered">Nombre</th>
+                <th class="centered">Precio</th>
+                <th class="centered">Descripcion</th>
+                <th class="centered">Categoria</th>
+                <th class="centered">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in platos%}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.categoria}}</td>
+                <td>
+                    <div>
+                    <a href="" class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    </div>
+                </td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
+    <script>
+    new DataTable('#1',{
+    pageLegth: 10,
+    columnDefs: [{
+        className:"centered", targets:[0,1,2,3,4,5],
+        orderable:false, targets:[5]
+}],
+    language: {
+        lengthMenu: "Mostrar _MENU_ registros por pagina",
+        zeroRecords: "Ningun plato encontrado",
+        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+        infoEmpty: "ningun plato encontrado",
+        infoFiltered: "(Filtrados desde _MAX_ registros totales)",
+        search: "Buscar",
+        loadingRecords: "Cargando...",
+        paginate:{
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior"
+        }
+
+    }
+    });
+    </script>
+</body>
+</html>
