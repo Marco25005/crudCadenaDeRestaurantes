@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="estilos/styles.css">
-    
-</head>
-<body>
-    <header class="site-header inicio">
-        <div class="contenido-header contenedor">
-            <div class="barra">
-                <div class="logo">
-                    <img src="imagenes/logo.png" alt="logo">
-                </div>
-                <div class="bar">
-                    <button><i class="fa-solid fa-bars" id="hdcross"></i></button>
-                    <button><i class="fa-solid fa-xmark" id="Xmark"></i></button>
-                </div>
-                <nav class="nav">
-                    <ul>
-                        <a href=""><li>Home</li></a>
-                        <a href=""><li>Nosotros</li></a>
-                        <a href=""><li>Menú</li></a>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="header-hero">
-                <h1>Buena comida y buenas vibras</h1>
-                <p>Disfruta de nuesto buen ambiente y de nuestro amplio menú lleno de una variedad de esquisitos platos</p>
-                <div class="boton-header"><a href="" class="boton-dorado">Ver Menú</a></div>
-            </div>
-       </div>
-    </header>
-    <section class="contenedor nosotros seccion">
+{% extends 'layouts/base.html' %}
+{% load static %}
+    {% block section %}
         <div class="centrar-contenido nosotros_titulo">
             <h2>Sobre Nosotros</h2>
             <p>Más de 5 años en experiencia laboral trayendo al público los más exquisitos platos. Desde comida tradicional hasta los mas populares platos extrageros todo esto al alcance de tu mano </p>
@@ -53,17 +18,7 @@
                 <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg" alt="">
             </div>
         </div>
-    </section>
-    <footer class="site-footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="nav">
-                <ul>
-                    <a href=""><li>Home</li></a>
-                    <a href=""><li>Nosotros</li></a>
-                    <a href="menu.html"><li>Menú</li></a>
-                </ul>
-            </nav>
-            <p class="copyright">Todos los derechos Reservados 2024 &copy;</p>
-    </footer>
+    {% endblock section %}
+   
 </body>
 </html>
