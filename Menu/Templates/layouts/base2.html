@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%block link%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="{% static '/estilos/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    {%endblock link%}
+    <title>{% block title %}
+      catering
+    {% endblock title %}</title>
+</head>
+<body>
+    
+    <header>
+    {%block header%}
+        <div class="barra site-header">
+            <div class="logo">
+                <img src="{% static '/imagenes/logo.png' %}" alt="logo">
+            </div>
+            <div class="bar">
+                <div class="bar">
+                    <a class="nav-link dropdown-toggle" href="#" id="hdcross" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="hdcross">
+                        <a class="dropdown-item" href="{% url 'inicio' %}">Home</a>
+                     <div class="dropdown-divider"></div>    
+                        <a class="dropdown-item" href="#">Nosotros</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'categoria'%}">Categorias</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <a href="{% url 'inicio' %}"><li>Home</li></a>
+                    <a href=""><li>Nosotros</li></a>
+                    <a href="{% url 'categoria'%}"><li>Categorias</li></a>
+                </ul>
+            </nav>
+        </div>
+        {%endblock header%}  
+    </header>
+    
+  <section class="contenedor">
+    {% block section %}
+    {% endblock section %}
+ </section>
+ 
+ <footer class="site-footer seccion">
+    <div class="contenedor contenedor-footer">
+          <p class="copyright"> Marcos Antonio Bermúdez Todos los derechos Reservados 2024 &copy;</p>
+      </div>
+  </footer>
+   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
+    <script>
+    new DataTable('#1',{
+    pageLegth: 10,
+    columnDefs: [{
+        className:"centered", targets:[0,1,2,3,4],
+        orderable:false, targets:[4]
+}],
+    language: {
+        lengthMenu: "Mostrar _MENU_ registros por pagina",
+        zeroRecords: "Ningun plato encontrado",
+        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+        infoEmpty: "ningun plato encontrado",
+        infoFiltered: "(Filtrados desde _MAX_ registros totales)",
+        search: "Buscar",
+        loadingRecords: "Cargando...",
+        paginate:{
+            first: "Primero",
+            last: "Ultimo",
+            next: "Siguiente",
+            previous: "Anterior"
+        }
+
+    }
+    });
+    </script>
+</body>
+</html>

@@ -1,6 +1,41 @@
-{% extends 'layouts/base.html' %}
+{% extends 'layouts/base2.html' %}
 {% load static %}
+    {%block header%}
+        
+        <div class="inicio">
+        <div class="contenido-header contenedor">
+                <div class="barra">
+                    <div class="logo">
+                        <img src="{% static '/imagenes/logo.png' %}" alt="logo">
+                    </div>
+                    <div class="bar">
+                         <a class="nav-link dropdown-toggle" href="#" id="hdcross" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="hdcross">
+                        <a class="dropdown-item" href="{% url 'inicio' %}">Home</a>
+                     <div class="dropdown-divider"></div>    
+                        <a class="dropdown-item" href="#">Nosotros</a>
+                    <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'categoria'%}">Categorias</a>
+                    </div>
+                    </div>
+                    <nav class="nav">
+                        <ul>
+                            <a href="{% url 'inicio' %}"><li>Home</li></a>
+                            <a href=""><li>Nosotros</li></a>
+                            <a href="{% url 'categoria'%}"><li>Categorias</li></a>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-hero">
+                    <h1>Buena comida y buenas vibras</h1>
+                    <p>Disfruta de nuesto buen ambiente y de nuestro amplio menú lleno de una variedad de esquisitos platos</p>
+                    <a href="{% url 'categoria' %}" class="btn btn-lg btn-warning">Ver Menú</a>
+                </div>
+           </div>
+        </div>
+    {%endblock header%} 
     {% block section %}
+    <div class="nosotros">
         <div class="centrar-contenido nosotros_titulo">
             <h2>Sobre Nosotros</h2>
             <p>Más de 5 años en experiencia laboral trayendo al público los más exquisitos platos. Desde comida tradicional hasta los mas populares platos extrageros todo esto al alcance de tu mano </p>
@@ -18,6 +53,7 @@
                 <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg" alt="">
             </div>
         </div>
+    </div>
     {% endblock section %}
    
 </body>
