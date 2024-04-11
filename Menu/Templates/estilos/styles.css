@@ -1,18 +1,15 @@
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
+html {
+  font-size: 62.5%; /** reset para rems - 65.5% = a 10 px*/
+  box-sizing: border-box; /* esto sirve para solucionar un problema con el ancho y el padding */
   text-decoration: none;
-  color: black;
-  font-size: 62.5%;
+  list-style: none;
+  
 }
-body{
+body {
   font-family: 'Lato', sans-serif;
   font-size: 1.6rem;
   line-height: 2;
-  background-color: #272727;
+  margin: 0;
 }  
 /** globales **/
 img {
@@ -41,7 +38,7 @@ p{
 }
 /*utilidades*/
 .contenedor {
-  max-width: 120rem;
+  max-width: 180rem;
   margin: 0 auto;
 }
 .seccion {
@@ -85,16 +82,12 @@ p{
   background-color: #333333;
   padding: 1rem 0 3rem 0;
 }
-.inicio{
+.site-header.inicio{
   background-image: url(../imagenes/restaurant-4011989_1920.jpg);
   background-position: center center;
   background-size: cover;
   height: 100vh;
   min-height: 60rem;
-}
-.centered{
-  text-align: center!important;
-  vertical-align: middle!important;
 }
 .contenido-header {
   height: 90%; 
@@ -135,7 +128,7 @@ p{
 .nav ul {
   display: flex;
   align-items: center;
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 
 .nav ul li{
@@ -148,11 +141,12 @@ p{
 }
 /* seccion nosotros*/
 .nosotros{
+  background-color: #272727;
+  padding: 50px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
   gap: 4rem;
-  margin-bottom: 5rem;
 }
 .imagenes{
   display: grid;
@@ -210,6 +204,11 @@ p{
   color: white;
   font-size: 1.5rem;
 }
+.centered{
+  text-align: center!important;
+  vertical-align: middle!important;
+}
+
 @media (max-width: 500px) {
   .bar{
     display: block;

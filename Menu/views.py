@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from .models import Categoria
-from .forms import CrearFormulario
+from django.contrib import messages
+from .forms import CategoriaForm
 # Create your views here.
 
 def categoria(request):
@@ -12,15 +13,16 @@ def home(request):
     return render(request,"index.html")
 
 def agregarCategoria(request):
-    if request.method=="GET":
-        return render(request,"formulario.html",{"form":CrearFormulario()})
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, '¡Categoría agregada con éxito!')
+            return redirect('categoria')  
     else:
-        categoria=request.POST["nombreCategoria"]
-        postre=request.POST["postre"] 
-        Categoria.objects.create(nombreCategoria=categoria,postre=postre)
-        return redirect("categoria")
+        form = CategoriaForm()
 
-    
+    return render(request, 'formulario.html', {'form': form})    
 
 def eliminar(request,id):
     categoria=Categoria.objects.get(id)

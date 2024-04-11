@@ -1,7 +1,9 @@
-from django import forms
+from django.forms import ModelForm
+from .models import Categoria
 
-class CrearFormulario(forms.Form):
-    nombreCategoria= forms.CharField(label="Nombre", max_length=200)
-    platoPrincipal= forms.CharField(label="Plato Principal", max_length=200)
-    postre= forms.FloatField(label="Precio")
-   
+# Crear la clase del formulario
+class CategoriaForm(ModelForm):
+    class Meta:
+        model = Categoria
+        fields = ['entradas', 'postre', 'platoPrincipal']
+
