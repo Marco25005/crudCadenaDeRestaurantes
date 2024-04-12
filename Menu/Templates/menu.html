@@ -8,35 +8,39 @@
 {%endblock link%}
  
 {% block section %}
-<div>
-    <h2> Categorias</h2>
-        <a href="{% url 'agregar_plato'%}" class="btn btn-lg btn-primary">Agregar</a>
-        <table id="1" class="table table-striped table-bordered table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th class="centered">Id</th>
-                    <th class="centered">Entradas</th>
-                    <th class="centered">Postres</th>
-                    <th class="centered">Platos Principales</th>
-                    <th class="centered">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in categorias%}
-                <tr>
-                    <td>{{item.id}}</td>
-                    <td>{{item.entradas}}</td>
-                    <td>{{item.postre}}</td>
-                    <td>{{item.platoPrincipal}}</td>
-                    <td>
-                        <div>
-                        <a href="" class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil fa-2x "></i></a>
-                        <a href="" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash fa-2x"></i></a>
-                        </div>
-                    </td>
-                </tr>
-               {% endfor %}
-            </tbody>
-        </table>
+<div class="container">
+    <div class="mt-3">
+        <h2> Categorias</h2>
+            <a href="{% url 'agregar_plato'%}" class="btn btn-lg btn-primary mt-2">Agregar</a>
+    </div>
+        <div class="mt-3">
+            <table id="1" class="table table-striped table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="centered">Id</th>
+                        <th class="centered">Entradas</th>
+                        <th class="centered">Postres</th>
+                        <th class="centered">Platos Principales</th>
+                        <th class="centered">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in categorias%}
+                    <tr>
+                        <td>{{item.pk}}</td>
+                        <td>{{item.entradas}}</td>
+                        <td>{{item.postre}}</td>
+                        <td>{{item.platoPrincipal}}</td>
+                        <td>
+                            <div>
+                            <a href="{% url 'editar_plato' item.pk %}" class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil fa-2x "></i></a>
+                            <a href="{% url 'eliminar_plato' item.pk %}" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash fa-2x"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
 </div>
 {% endblock section %}

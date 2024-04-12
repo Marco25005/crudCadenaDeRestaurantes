@@ -6,6 +6,12 @@ class CategoriaForm(forms.ModelForm):
     class Meta:
         model = Categoria
         fields = ['entradas', 'postre', 'platoPrincipal']
+        labels = {
+            'entradas': 'Entrada:',
+            'postre': 'Postre:',
+            'platoPrincipal': 'Plato Principal:'
+            
+        }
 
     def __init__(self, *args, **kwargs):
         super(CategoriaForm, self).__init__(*args, **kwargs)

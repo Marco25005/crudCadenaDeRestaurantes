@@ -12,6 +12,9 @@ body {
   font-size: 1.6rem;
   line-height: 2;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }  
 /** globales **/
 img {
@@ -40,7 +43,7 @@ p{
 }
 /*utilidades*/
 .contenedor {
-  max-width: 180rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 .seccion {
@@ -66,7 +69,6 @@ p{
 #hdcross{
   color: #fff;
   font-size: 4rem;
-  transition: all .5s;
 }
 .dropdown-toggle::after{
   display: none;
@@ -177,7 +179,7 @@ p{
 }
 .site-footer {
   background-color: black;
-  margin: 0;
+  margin-top: auto;
 }
 .contenedor-footer{
   padding: 3rem 0;
@@ -187,6 +189,9 @@ p{
   margin: 0;
   color: white;
   font-size: 2rem;
+}
+.asteriskField{
+  display: none;
 }
 .centered{
   text-align: center!important;

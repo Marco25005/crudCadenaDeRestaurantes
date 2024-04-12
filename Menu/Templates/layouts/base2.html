@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {%block link%}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="{% static '/estilos/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static '/estilos/styles.css' %}">
     {%endblock link%}
     <title>{% block title %}
       catering
@@ -44,12 +44,12 @@
         {%endblock header%}  
     </header>
     
-  <section class="contenedor">
+  <section>
     {% block section %}
     {% endblock section %}
  </section>
  
- <footer class="site-footer seccion">
+ <footer class="site-footer">
     <div class="contenedor contenedor-footer">
           <p class="copyright"> Marcos Antonio Bermúdez Todos los derechos Reservados 2024 &copy;</p>
       </div>
@@ -79,8 +79,7 @@
             last: "Ultimo",
             next: "Siguiente",
             previous: "Anterior"
-        }
-
+        },
     }
     });
     </script>

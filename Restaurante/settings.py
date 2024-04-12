@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'crispy_bootstrap4',
     'Menu',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,7 +126,7 @@ STATIC_URL = 'Menu/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-    BASE_DIR / 'Menu/Templates/'
+    BASE_DIR / 'Menu/static/'
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
